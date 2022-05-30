@@ -4,6 +4,22 @@ public class Item {
     private int id;
     private String name;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Item() {
     }
 
@@ -18,12 +34,8 @@ public class Item {
 
     public void getInfo() {
         System.out.println("enter your name : " + name);
-        System.out.println();
-    }
-
-    public void getInfo1() {
-        System.out.println("enter your name : " + name);
         System.out.println("enter your id : " + id);
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -32,6 +44,6 @@ public class Item {
         Item second = new Item("Andrei");
         second.getInfo();
         Item third = new Item("Andrei", 2948188);
-        third.getInfo1();
+        third.getInfo();
     }
 }
