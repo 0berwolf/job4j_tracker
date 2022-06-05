@@ -5,7 +5,7 @@ public class Config {
     private int position;
     private String[] properties;
 
-    private Config(String name) {
+    public Config(String name) {
         this.name = name;
     }
 
@@ -17,7 +17,7 @@ public class Config {
         return search(key);
     }
 
-    public String search(String key) {
+    private String search(String key) {
         return key;
     }
 }
