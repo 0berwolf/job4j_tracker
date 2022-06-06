@@ -14,6 +14,7 @@ public class Library {
         for (Book nbr : books) {
             System.out.println(nbr.getNameOfBook() + " - " + nbr.getCountPages());
         }
+
         System.out.println();
         System.out.println("Переставляем местами книги с индексом 0 и 3");
         System.out.println();
