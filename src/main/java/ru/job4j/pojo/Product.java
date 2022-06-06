@@ -2,6 +2,7 @@ package ru.job4j.pojo;
 
 public class Product {
     private String name;
+
     private int count;
 
     public String getName() {
