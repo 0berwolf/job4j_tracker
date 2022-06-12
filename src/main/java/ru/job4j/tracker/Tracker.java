@@ -21,23 +21,36 @@ public class Tracker {
         Item[] rsl = new Item[size];
         int count = 0;
         for (int index = 0; index < size; index++) {
-          Item item = items[index];
-          if (item.getName().equals(key)) {
-              rsl[count++] = item;
-          }
+            Item item = items[index];
+            if (item.getName().equals(key)) {
+                rsl[count++] = item;
+            }
         }
         return Arrays.copyOf(rsl, count);
     }
 
-    public Item findById(int id) {
-        Item rsl = null;
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
+    }
+
+    public Item findById(int id) {
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    public boolean replace(int id, Item item) {
+        if (indexOf(id) > -1) {
+            items[indexOf(id)].setName(item.getName());
+            return true;
+        } else {
+            return false;
+        }
     }
 }
