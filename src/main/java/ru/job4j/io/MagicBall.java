@@ -9,9 +9,8 @@ public class MagicBall {
         System.out.print("Кто ты? ");
         String name = input.nextLine();
         System.out.println(name + ", и что ты хотел?");
-        String name1 = input.nextLine();
-        System.out.println(name1 + " от 0 до 3");
-        System.out.print("Твой ответ: ");
+        System.out.println("загадать число от 0 до 3");
+        System.out.print("Ответ ИИ, при выборе числа: ");
         int answer = new Random().nextInt(3);
         if (answer == 0) {
             System.out.println("Да");
