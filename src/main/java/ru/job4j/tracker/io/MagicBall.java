@@ -1,4 +1,4 @@
-package ru.job4j.io;
+package ru.job4j.tracker.io;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -9,7 +9,7 @@ public class MagicBall {
         System.out.print("Кто ты? ");
         String name = input.nextLine();
         System.out.println(name + ", и что ты хотел?");
-        System.out.println("загадать число от 0 до 3");
+        System.out.println("загадать число от 0 до 3 ");
         System.out.print("Ответ ИИ, при выборе числа: ");
         int answer = new Random().nextInt(3);
         if (answer == 0) {
