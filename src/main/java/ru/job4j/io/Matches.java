@@ -16,12 +16,15 @@ public class Matches {
                 if (matches >= 1 && matches <= 3) {
                     System.out.println("Количество спичек которое надо убрать: " + matches + ", количество спичек на столе " + count);
                     count = count - matches;
-                    System.out.println("Выиграл первый игрок");
                 } else {
                     System.out.println("ОШИБКА! Введите необходимое число спичек.");
                     System.out.println();
-                    System.out.println("Выиграл второй игрок");
                 }
+            if (!turn) {
+                System.out.println("Выиграл первый игрок");
+            } else {
+                System.out.println("Выиграл второй игрок");
+            }
             }
         }
     }
