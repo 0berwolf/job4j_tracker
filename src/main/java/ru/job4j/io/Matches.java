@@ -13,21 +13,21 @@ public class Matches {
             System.out.println(player + "Введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-                if (matches >= 1 && matches <= 3) {
-                    System.out.println("Количество спичек которое надо убрать: " + matches + ", количество спичек на столе " + count);
-                    count = count - matches;
-                } else {
-                    System.out.println("ОШИБКА! Введите необходимое число спичек.");
-                    System.out.println();
-                }
-            if (!turn) {
-                System.out.println("Выиграл первый игрок");
+            if (matches >= 1 && matches <= 3) {
+                System.out.println("Количество спичек которое надо убрать: " + matches + ", количество спичек на столе " + count);
+                count = count - matches;
             } else {
-                System.out.println("Выиграл второй игрок");
-            }
+                System.out.println("ОШИБКА! Введите необходимое число спичек.");
+                System.out.println();
             }
         }
+        if (!turn) {
+                System.out.println("Выиграл первый игрок");
+        } else {
+                System.out.println("Выиграл второй игрок");
+        }
     }
+}
 
 
 
