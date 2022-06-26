@@ -46,7 +46,7 @@ public class StartUI {
                 if (tracker.delete(id)) {
                     System.out.println("Заявка удалена успешно.");
                 } else {
-                    System.out.println("Ошибка удаления заявки.");
+                    System.out.println("Ошибка удаления заявки. ");
                 }
             } else if (select == 4) {
                 System.out.println("=== Find items by id ===");
