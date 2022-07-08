@@ -14,7 +14,7 @@ public class DeleteAction implements UserAction {
         if (tracker.delete(id)) {
             System.out.println("Заявка удалена успешно.");
         } else {
-            System.out.println("Ошибка удаления заявки.");
+            System.out.println("Ошибка удаления заявки. ");
         }
         return true;
     }
