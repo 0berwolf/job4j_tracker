@@ -29,7 +29,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", replacedName, "1"}
         );
-        UserAction[] actions = {
+        UserAction[] actions = {  new CreateAction(),
                 new ReplaceAction(),
                 new ExitAction()
         };
@@ -42,9 +42,9 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted item"));
         Input in = new StubInput(
-                new String[] {"0", "Deleted item", "1"}
+                new String[] {"0", String.valueOf(item), "1"}
         );
-        UserAction[] actions = {
+        UserAction[] actions = {  new CreateAction(),
                 new DeleteAction(),
                 new ExitAction()
         };
