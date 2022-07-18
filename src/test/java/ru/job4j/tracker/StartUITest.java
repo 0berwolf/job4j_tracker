@@ -2,7 +2,6 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
@@ -14,7 +13,7 @@ public class StartUITest {
                 new String[] {"0"});
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new ExitAction()};
+                new ExitAction(out)};
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator() +
