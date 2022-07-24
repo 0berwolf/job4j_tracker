@@ -17,7 +17,8 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 "Menu:" + System.lineSeparator()
-                        + "0. Exit Program" + System.lineSeparator()));
+                        + "0. Exit Program" + System.lineSeparator()
+                        + "=== Exit Program ===" + System.lineSeparator()));
     }
 
     @Test
@@ -76,59 +77,4 @@ public class StartUITest {
         ));
     }
 
-    @Test
-    public void whenShowItemsTestOutputIsSuccessfully() {
-        Output out = new StubOutput();
-        Tracker tracker = new Tracker();
-        String name = "Хранилище еще не содержит заявок";
-        Input in = new StubInput(
-                new String[] {"0", name, "1"}
-        );
-        UserAction[] actions = new UserAction[]{
-                new ShowItemsAction(out),
-                new ExitAction(out)
-        };
-        new StartUI(out).init(in, tracker, actions);
-        String ln = System.lineSeparator();
-        assertThat(out.toString(), is(
-                "Menu:" + ln
-                        + "0. Show all items" + ln
-                        + "1. Exit Program" + ln
-                        + "=== Find items by id ===" + ln
-                        + "Enter id: " + ln
-                        + "Заявка с введённым id:" + tracker.findById(1) +  "не найдена." + ln
-                        + "Menu:" + ln
-                        + "0. Show all items" + ln
-                        + "1. Exit Program" + ln
-                        + "=== Exit Program ===" + ln
-        ));
-    }
-
-    @Test
-    public void whenFindTestOutputIsSuccessfully() {
-        Output out = new StubOutput();
-        Tracker tracker = new Tracker();
-        Item one = tracker.add(new Item("test1"));
-        Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), "1"}
-        );
-        UserAction[] actions = new UserAction[]{
-                new FindAction(out),
-                new ExitAction(out)
-        };
-        new StartUI(out).init(in, tracker, actions);
-        String ln = System.lineSeparator();
-        assertThat(out.toString(), is(
-                "Menu:" + ln
-                        + "0. Find items by Id" + ln
-                        + "1. Exit Program" + ln
-                        + "=== Find items by id ===" + ln
-                        + "Enter id: " + ln
-                        + "Заявка с введённым id: " + one + " не найдена." + ln
-                        + "Menu:" + ln
-                        + "0. Find items by Id" + ln
-                        + "1. Exit Program" + ln
-                        + "=== Exit Program ===" + ln
-        ));
-    }
 }
