@@ -76,5 +76,4 @@ public class StartUITest {
                         + "=== Exit Program ===" + ln
         ));
     }
-
 }
