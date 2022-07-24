@@ -45,8 +45,7 @@ public class StartUITest {
                         + "Menu:" + ln
                         + "0. Edit item" + ln
                         + "1. Exit Program" + ln
-                        + "=== Exit Program ===" + ln
-        ));
+                        + "=== Exit Program ===" + ln));
     }
 
     @Test
