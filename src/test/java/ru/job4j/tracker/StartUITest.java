@@ -75,4 +75,59 @@ public class StartUITest {
                         + "=== Exit Program ===" + ln
         ));
     }
+
+    @Test
+    public void whenFindByIdTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        String findId = "№ 1";
+        Input in = new StubInput(
+                new String[] {"0", findId, "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new FindAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Find items by id" + ln
+                        + "1. Exit Program" + ln
+                        + "=== Find items by id ===" + ln
+                        + "Enter id: " + ln
+                        + "Заявки с именем: " + findId + " не найдены." + ln
+                        + "Menu:" + ln
+                        + "0. Find items by id" + ln
+                        + "1. Exit Program" + ln
+                        + "=== Exit Program ===" + ln
+        ));
+    }
+
+    @Test
+    public void whenShowItemsTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("test1"));
+        Input in = new StubInput(
+                new String[] {"0",String.valueOf(item.getId()), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new ShowItemsAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit Program" + ln
+                        + "=== Show all items ===" + ln
+                        + "Хранилище еще не содержит заявок" + ln
+                        + "Menu:" + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit Program" + ln
+                        + "=== Exit Program ===" + ln
+        ));
+    }
 }
