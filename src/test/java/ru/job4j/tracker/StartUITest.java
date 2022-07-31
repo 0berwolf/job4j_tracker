@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -28,7 +29,7 @@ public class StartUITest {
         Item one = tracker.add(new Item("test1"));
         String replaceName = "New Test Name";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), replaceName, "1" }
+                new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new ReplaceAction(out),
@@ -80,9 +81,10 @@ public class StartUITest {
     public void whenFindByIdTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        String findId = "№ 1";
+        Item one = tracker.add(new Item("test1"));
+        String findId = "number 1";
         Input in = new StubInput(
-                new String[] {"0", findId, "1"}
+                new String[] {"0", String.valueOf(one.getId()), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindAction(out),
@@ -95,8 +97,7 @@ public class StartUITest {
                         + "0. Find items by id" + ln
                         + "1. Exit Program" + ln
                         + "=== Find items by id ===" + ln
-                        + "Enter id: " + ln
-                        + "Заявки с именем: " + findId + " не найдены." + ln
+                        + "Enter id: " + findId + ln
                         + "Menu:" + ln
                         + "0. Find items by id" + ln
                         + "1. Exit Program" + ln
@@ -108,9 +109,8 @@ public class StartUITest {
     public void whenShowItemsTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("test1"));
         Input in = new StubInput(
-                new String[] {"0",String.valueOf(item.getId()), "1"}
+                new String[] {"0", "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new ShowItemsAction(out),
