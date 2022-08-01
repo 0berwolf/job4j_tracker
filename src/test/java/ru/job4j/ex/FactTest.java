@@ -7,13 +7,13 @@ import static org.junit.Assert.*;
 public class FactTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void when3then6() {
+    public void whenMines1() {
         new Fact().calc(-1);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void whenMines1() {
+    @Test
+    public void when4then24() {
         int rsl = new Fact().calc(4);
-        assertThat(rsl, is(4));
+        assertThat(rsl, is(24));
     }
 }
