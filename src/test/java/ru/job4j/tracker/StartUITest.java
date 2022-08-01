@@ -82,7 +82,6 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
-        String findId = "number 1";
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(one.getId()), "1"}
         );
@@ -97,7 +96,7 @@ public class StartUITest {
                         + "0. Find items by id" + ln
                         + "1. Exit Program" + ln
                         + "=== Find items by id ===" + ln
-                        + "Enter id: " + findId + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Find items by id" + ln
                         + "1. Exit Program" + ln
