@@ -11,14 +11,15 @@ public class StartUITest {
     public void whenExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0"});
+                new String[] {"0" });
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new ExitAction(out)};
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 "Menu:" + System.lineSeparator()
-                        + "0. Exit Program" + System.lineSeparator()));
+                        + "0. Exit Program" + System.lineSeparator()
+                        + "=== Exit Program ===" + System.lineSeparator()));
     }
 
     @Test
@@ -44,7 +45,8 @@ public class StartUITest {
                         + "Заявка изменена успешно." + ln
                         + "Menu:" + ln
                         + "0. Edit item" + ln
-                        + "1. Exit Program" + ln));
+                        + "1. Exit Program" + ln
+                        + "=== Exit Program ===" + ln));
     }
 
     @Test
@@ -71,6 +73,7 @@ public class StartUITest {
                         + "Menu:" + ln
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
+                        + "=== Exit Program ===" + ln
         ));
     }
 
@@ -97,6 +100,7 @@ public class StartUITest {
                         + "Menu:" + ln
                         + "0. Find items by id" + ln
                         + "1. Exit Program" + ln
+                        + "=== Exit Program ===" + ln
         ));
     }
 
@@ -122,6 +126,7 @@ public class StartUITest {
                         + "Menu:" + ln
                         + "0. Show all items" + ln
                         + "1. Exit Program" + ln
+                        + "=== Exit Program ===" + ln
         ));
     }
 }

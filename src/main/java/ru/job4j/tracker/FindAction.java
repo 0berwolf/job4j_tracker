@@ -9,7 +9,7 @@ public class FindAction implements UserAction {
 
     @Override
     public String name() {
-        return "Find Item by Id";
+        return "Find items by id";
     }
 
     @Override
@@ -20,7 +20,7 @@ public class FindAction implements UserAction {
         if (item != null) {
             out.println(item);
         } else {
-           out.println("Заявка с введённым id: " + id + " не найдена. ");
+           out.println("Заявка с введённым id: " + id + " не найдена.");
         }
         return true;
     }
