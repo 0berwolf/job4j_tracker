@@ -2,16 +2,17 @@ package ru.job4j.ex;
 
 public class UserStore {
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        int rsl = -1;
+        User rsl = null;
         for (User user : users) {
             if (login.equals(user.getUsername())) {
+                rsl = user;
                 break;
             }
         }
-        if (rsl == -1) {
+        if (rsl == null) {
             throw new UserNotFoundException("not found user");
         }
-        return null;
+        return rsl;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
@@ -31,8 +32,8 @@ public class UserStore {
         } catch (UserInvalidException ui) {
             ui.printStackTrace();
             System.out.println("not found user" + "the name has less than three characters");
-        } catch (ElementNotFoundException enf) {
-            enf.printStackTrace();
+        } catch (UserNotFoundException e) {
+            e.printStackTrace();
             System.out.println("not validate user");
         }
     }
