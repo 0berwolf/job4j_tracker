@@ -9,7 +9,8 @@ public class ValidateInputTest {
     public void whenInvalidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"one", "1"});
+                new String[] {"one", "1"}
+        );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected).isEqualTo(1);
@@ -19,7 +20,8 @@ public class ValidateInputTest {
     public void whenCorrectInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0"});
+                new String[] {"0"}
+        );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected).isEqualTo(0);
@@ -29,7 +31,8 @@ public class ValidateInputTest {
     public void whenMultipleCorrectInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "1", "2"});
+                new String[] {"0", "1", "2"}
+        );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected).isEqualTo(0);
@@ -43,7 +46,8 @@ public class ValidateInputTest {
     public void whenNegativeNumberInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"-1"});
+                new String[] {"-1"}
+        );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected).isEqualTo(-1);
