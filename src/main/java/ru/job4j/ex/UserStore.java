@@ -31,10 +31,8 @@ public class UserStore {
             }
         } catch (UserInvalidException ui) {
             ui.printStackTrace();
-            System.out.println("not found user" + "the name has less than three characters");
         } catch (UserNotFoundException e) {
             e.printStackTrace();
-            System.out.println("not validate user");
         }
     }
 }
