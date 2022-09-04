@@ -15,7 +15,7 @@ class UniqueTextTest {
     }
 
     @Test
-    void NotIsEquals() {
+    void notIsEquals() {
         UniqueText uniqueText = new UniqueText();
         String origin = "My cat eats a mouse";
         String text = "A mouse is eaten by a cat";
