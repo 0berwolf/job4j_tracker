@@ -31,7 +31,6 @@ class NotifyAccountTest {
                 new Account("999", "Andrei Golub", "8888888883"));
         HashSet<Account> expect = new HashSet<>(Arrays.asList(
                 new Account("123", "Andrei Golub", "esR8922Qwm"),
-                new Account("999", "Andrei Golub", "8888888883"),
                 new Account("999", "Andrei Golub", "8888888883")));
         assertThat(notifyAccount.sent(accounts)).containsAll(expect);
     }
