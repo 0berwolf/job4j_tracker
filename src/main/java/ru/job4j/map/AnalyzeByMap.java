@@ -17,7 +17,7 @@ public class AnalyzeByMap {
 
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
         List<Label> rsl = new ArrayList<>();
-        for (Pupil pupil : pupils) {
+        for (Pupil pupil: pupils) {
             double sum = 0;
             for (Subject subject : pupil.subjects()) {
                 sum += subject.score();
