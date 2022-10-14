@@ -14,6 +14,7 @@ class DepartmentsTest {
         List<String> result = Departments.fillGaps(input);
         assertThat(result).containsAll(expect);
     }
+
     @Test
     public void whenNonChange() {
         List<String> input = Arrays.asList("k1", "k1/sk1");
@@ -33,8 +34,7 @@ class DepartmentsTest {
                 "K1/SK2",
                 "K1",
                 "K2/SK1/SSK2",
-                "K2/SK1/SSK1"
-        );
+                "K2/SK1/SSK1");
         List<String> expect = Arrays.asList(
                 "K1",
                 "K1/SK1",
@@ -44,8 +44,7 @@ class DepartmentsTest {
                 "K2",
                 "K2/SK1",
                 "K2/SK1/SSK1",
-                "K2/SK1/SSK2"
-        );
+                "K2/SK1/SSK2");
         Departments.sortAsc(input);
         assertThat(input).containsAll(expect);
     }
@@ -58,16 +57,14 @@ class DepartmentsTest {
                 "K2/SK1",
                 "K1/SK2",
                 "K2/SK1/SSK2",
-                "K2/SK1/SSK1"
-        );
+                "K2/SK1/SSK1");
         List<String> expect = Arrays.asList(
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
                 "K1/SK2",
                 "K2/SK1",
                 "K2/SK1/SSK1",
-                "K2/SK1/SSK2"
-        );
+                "K2/SK1/SSK2");
         Departments.sortAsc(input);
         assertThat(input).containsAll(expect);
     }
@@ -83,8 +80,7 @@ class DepartmentsTest {
                 "K1/SK2",
                 "K1",
                 "K2/SK1/SSK2",
-                "K2/SK1/SSK1"
-        );
+                "K2/SK1/SSK1");
         List<String> expect = Arrays.asList(
                 "K2",
                 "K2/SK1",
@@ -94,8 +90,7 @@ class DepartmentsTest {
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
-                "K1/SK2"
-        );
+                "K1/SK2");
         Departments.sortDesc(input);
         assertThat(input).containsAll(expect);
     }
@@ -109,8 +104,7 @@ class DepartmentsTest {
                 "K2/SK1",
                 "K1/SK2",
                 "K2/SK1/SSK2",
-                "K2/SK1/SSK1"
-        );
+                "K2/SK1/SSK1");
         List<String> expect = Arrays.asList(
                 "K2/SK1",
                 "K2/SK1/SSK1",
@@ -118,8 +112,7 @@ class DepartmentsTest {
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
-                "K1/SK2"
-        );
+                "K1/SK2");
         Departments.sortDesc(input);
         assertThat(input).containsAll(expect);
     }
