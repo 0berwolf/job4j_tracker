@@ -20,7 +20,7 @@ class FunctionCalculatorTest {
     @Test
     void whenSqrtFunctionResult() {
         FunctionCalculator function = new FunctionCalculator();
-        List<Double> result = function.diapason(1, 3, x -> 2 * Math.pow(x, 2) + x +1);
+        List<Double> result = function.diapason(1, 3, x -> 2 * Math.pow(x, 2) + x + 1);
         List<Double> expected = Arrays.asList(4D, 11D);
         assertThat(result).containsAll(expected);
     }
