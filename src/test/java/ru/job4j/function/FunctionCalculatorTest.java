@@ -29,7 +29,7 @@ class FunctionCalculatorTest {
     void whenExponentialFunctionResult() {
         FunctionCalculator function = new FunctionCalculator();
         List<Double> result = function.diapason(1, 4, x -> Math.pow(2, x));
-        List<Double> expected = Arrays.asList(2.0, 8.0);
+        List<Double> expected = Arrays.asList(2.0, 4.0, 8.0);
         assertThat(result).containsAll(expected);
     }
 }
