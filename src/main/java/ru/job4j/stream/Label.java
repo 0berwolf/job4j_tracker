@@ -1,12 +1,11 @@
 package ru.job4j.stream;
 
-import java.time.LocalDateTime;
+
 import java.util.Objects;
 
 public class Label {
     private String name;
     private float price;
-    private LocalDateTime shelfLife;
 
     public Label(String name, float price) {
         this.name = name;
