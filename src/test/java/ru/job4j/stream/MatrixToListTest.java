@@ -14,7 +14,8 @@ class MatrixToListTest {
         Integer[][] matrix = {
                 {1, 2, 3},
                 {4, 5, 6},
-                {7, 8, 9}};
+                {7, 8, 9}
+        };
         List<Integer> result = MatrixToList.convert(matrix);
         List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
         assertThat(result).containsAll(expected);
@@ -25,7 +26,8 @@ class MatrixToListTest {
         Integer[][] matrix = {
                 {1},
                 {2, 3},
-                {4, 5, 6}};
+                {4, 5, 6}
+        };
         List<Integer> result = MatrixToList.convert(matrix);
         List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6);
         assertThat(result).containsAll(expected);
